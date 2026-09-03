@@ -1,9 +1,16 @@
 import './App.css'
+import { useState } from 'react'
+import { UserContext } from './context/UserContext'
+
 
 function App() {
 
   return (
-    <h1 className="text-6xl">Que comience el Juego</h1>
+    <UserContext.Provider (UserContext)>
+
+
+
+    </UserContext.Provider>
 
   )
 }
