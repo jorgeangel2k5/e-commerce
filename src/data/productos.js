@@ -1,8 +1,3 @@
-import trekMarlin from "../assets/trek-marlin-5.jpg";
-import specializedRockhopper from "../assets/specialized-rockhopper.jpg";
-import venzoLoki from "../assets/venzo-loki.jpg";
-import scottAspect from "../assets/scott-aspect-960.jpg";
-
 const products = [
   {
     id: 1,
@@ -10,8 +5,8 @@ const products = [
     nombre: "Trek Marlin 5",
     precio: 1200000,
     categoria: "Mountain Bike",
-    imagen: trekMarlin,
-    descripcion: "Bicicleta de montaña ideal para senderos y caminos exigentes.",
+    imagen: "https://images.unsplash.com/photo-1541625602330-2277a4c46182",
+    descripcion: "Bicicleta de montaña versátil, ideal para senderos y recorridos recreativos.",
     stock: 8,
   },
   {
@@ -20,8 +15,8 @@ const products = [
     nombre: "Specialized Rockhopper",
     precio: 1450000,
     categoria: "Mountain Bike",
-    imagen: specializedRockhopper,
-    descripcion: "Excelente rendimiento para ciclistas principiantes e intermedios.",
+    imagen: "https://images.unsplash.com/photo-1511994298241-608e28f14fde",
+    descripcion: "Excelente rendimiento en terrenos irregulares con cuadro liviano de aluminio.",
     stock: 5,
   },
   {
@@ -30,8 +25,8 @@ const products = [
     nombre: "Venzo Loki",
     precio: 890000,
     categoria: "Mountain Bike",
-    imagen: venzoLoki,
-    descripcion: "Diseño robusto y cómodo para aventuras al aire libre.",
+    imagen: "https://images.unsplash.com/photo-1485965120184-e220f721d03e",
+    descripcion: "Modelo resistente y cómodo para ciclistas que buscan aventura.",
     stock: 12,
   },
   {
@@ -40,8 +35,70 @@ const products = [
     nombre: "Scott Aspect 960",
     precio: 1350000,
     categoria: "Mountain Bike",
-    imagen: scottAspect,
-    descripcion: "Cuadro liviano y gran estabilidad en terrenos irregulares.",
+    imagen: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8",
+    descripcion: "Diseñada para brindar estabilidad y control en terrenos exigentes.",
     stock: 6,
   },
+  {
+    id: 5,
+    codigo: "B005",
+    nombre: "Cannondale Trail 8",
+    precio: 1100000,
+    categoria: "Mountain Bike",
+    imagen: "https://images.unsplash.com/photo-1517649763962-0c623066013b",
+    descripcion: "Ideal para quienes desean iniciarse en el ciclismo de montaña.",
+    stock: 10,
+  },
+  {
+    id: 6,
+    codigo: "B006",
+    nombre: "Giant Escape 3",
+    precio: 980000,
+    categoria: "Urbana",
+    imagen: "https://images.unsplash.com/photo-1484920274317-87885fcbc8e5",
+    descripcion: "Bicicleta urbana cómoda y eficiente para desplazamientos diarios.",
+    stock: 15,
+  },
+  {
+    id: 7,
+    codigo: "B007",
+    nombre: "Trek FX 2",
+    precio: 1250000,
+    categoria: "Urbana",
+    imagen: "https://images.unsplash.com/photo-1519583272095-6433daf26b6e",
+    descripcion: "Perfecta para ciudad, ejercicio y paseos recreativos.",
+    stock: 9,
+  },
+  {
+    id: 8,
+    codigo: "B008",
+    nombre: "BMX Freestyle Pro",
+    precio: 650000,
+    categoria: "BMX",
+    imagen: "https://images.unsplash.com/photo-1558981806-ec527fa84c39",
+    descripcion: "Diseñada para saltos, trucos y competiciones de freestyle.",
+    stock: 7,
+  },
+  {
+    id: 9,
+    codigo: "B009",
+    nombre: "Giant Talon 3",
+    precio: 1180000,
+    categoria: "Mountain Bike",
+    imagen: "https://images.unsplash.com/photo-1502740479091-635887520276",
+    descripcion: "Excelente opción para explorar caminos y senderos de montaña.",
+    stock: 11,
+  },
+  {
+    id: 10,
+    codigo: "B010",
+    nombre: "Specialized Sirrus X 2.0",
+    precio: 1320000,
+    categoria: "Urbana",
+    imagen: "https://images.unsplash.com/photo-1571068316344-75bc76f77890",
+    descripcion: "Combinación perfecta entre velocidad, comodidad y versatilidad.",
+    stock: 4,
+  },
 ];
+
+export default products;
