@@ -1,18 +1,22 @@
-import './App.css'
-import { useState } from 'react'
-import { UserContext } from './context/UserContext'
-
-
+import './App.css';
+import { UserProvider } from './context/UserContext';
+import { Login } from './pages/Login';
+import Home from './pages/Home';
+import { BrowserRouter, Routes, Route } from 'react-router'
 function App() {
-
   return (
-    <UserContext.Provider (UserContext)>
+    <UserProvider>
+      <BrowserRouter>
+        <Routes>
+          
+          <Route path="/login" element={<Login />} />
 
-
-
-    </UserContext.Provider>
-
-  )
+          
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </UserProvider>
+  );
 }
 
-export default App
+export default App;
