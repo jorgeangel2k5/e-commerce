@@ -1,11 +1,16 @@
-import './App.css'
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./routes/AppRouter";
+import "./App.css";
 
 function App() {
-
   return (
-    <h1 className="text-6xl">Que comience el Juego</h1>
-
-  )
-}
-
-export default App
+  
+    <BrowserRouter>
+    
+      <AppRouter />
+     
+    </BrowserRouter>
+    
+  );
+} 
+export default App;
