@@ -63,7 +63,7 @@ export const Login = () => {
               <input 
                 type="password"
                 placeholder="••••••••"
-                className="text-white bg-zinc-900 rounded-xl w-full px-4 py-2 border border-zinc-700 focus:outline-none focus:border-amber-500"
+                className="text-white bg-zinc-900 rounded-xl w-full px-4 py-2 border border-zinc-700 focus:outline-none transform-flat focus:border-amber-500"
                 {...register("password", {
                   required: "El campo es obligatorio"
                 })}
