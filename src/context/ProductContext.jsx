@@ -16,12 +16,19 @@ export const ProductProvider = ({ children }) => {
     }, [])
 
     useEffect(() => {
-        productos(JSON.stringify(datosGuardados))
-        localStorage.setItem(datosGuardados)
+        localStorage.setItem(
+            "catalogo",
+            JSON.stringify(productos)
+        )
     }, [productos])
 
+    // Agregar producto
+    const agregarProducto = (nuevoProducto) => {
+        setProductos([...productos, nuevoProducto])
+    }
+
     return (
-        <ProductContext.Provider value={{productos}}>
+        <ProductContext.Provider value={{productos, agregarProducto}}>
             {children}
         </ProductContext.Provider>
     )
