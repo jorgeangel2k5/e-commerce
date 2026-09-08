@@ -1,12 +1,12 @@
 import React, { createContext } from 'react'
 import { useState, useEffect } from 'react'
-import products from '../data/productos'
+import initialProducts from '../data/productos'
 
 const ProductContext = createContext()
 
 export const ProductProvider = ({ children }) => {
 
-    const [productos, setProductos] = useState(products)
+    const [productos, setProductos] = useState(initialProducts)
     useEffect(() => {
         const datosGuardados = localStorage.getItem("catalogo");
 
@@ -22,13 +22,8 @@ export const ProductProvider = ({ children }) => {
         )
     }, [productos])
 
-    // Agregar producto
-    const agregarProducto = (nuevoProducto) => {
-        setProductos([...productos, nuevoProducto])
-    }
-
     return (
-        <ProductContext.Provider value={{productos, agregarProducto}}>
+        <ProductContext.Provider value={{productos}}>
             {children}
         </ProductContext.Provider>
     )
