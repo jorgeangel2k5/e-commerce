@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import { ProtectedRoute } from './routes/ProtectedRoute';
 
+
 function App() {
   return (
     <UserProvider>
