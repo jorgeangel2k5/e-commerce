@@ -6,7 +6,16 @@ import NotFound from "../pages/NotFound";
     return (
    
         <Routes>
+
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+
+            <Route element={<ProtectedRoute adminOnly={true} />}>
+                    <Route path="/admin" element={<Admin />} />
+            </Route>
+
+
+         
             <Route path="*" element={<NotFound />} />
      
         </Routes>
