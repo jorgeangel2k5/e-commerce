@@ -8,17 +8,15 @@ import { ProtectedRoute } from './routes/ProtectedRoute';
 function App() {
   return (
     <UserProvider>
-    
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Home />} />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home />} />
 
-          {/* Ruta protegida */}
-          <Route element={<ProtectedRoute adminOnly={true} />}>
-            <Route path="/admin" element={<h1>Panel de Administración (Vista previa)</h1>} />
-          </Route>
-        </Routes>
-   
+        {/* Ruta protegida */}
+        <Route element={<ProtectedRoute adminOnly={true} />}>
+          <Route path="/admin" element={<h1>Panel de Administración (Vista previa)</h1>} />
+        </Route>
+      </Routes>
     </UserProvider>
   );
 }
