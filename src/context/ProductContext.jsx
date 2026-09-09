@@ -6,14 +6,13 @@ const ProductContext = createContext()
 
 export const ProductProvider = ({ children }) => {
 
-    const [productos, setProductos] = useState(initialProducts)
-    useEffect(() => {
+    const [productos, setProductos] = useState(() => {
         const datosGuardados = localStorage.getItem("catalogo");
-
         if (datosGuardados != null) {
-            setProductos(JSON.parse(datosGuardados))
-        }        
-    }, [])
+            return JSON.parse(datosGuardados);
+        }
+        return initialProducts;
+    });
 
     useEffect(() => {
         localStorage.setItem(
@@ -23,7 +22,7 @@ export const ProductProvider = ({ children }) => {
     }, [productos])
 
     return (
-        <ProductContext.Provider value={{productos}}>
+        <ProductContext.Provider value={{productos, setProductos}}>
             {children}
         </ProductContext.Provider>
     )

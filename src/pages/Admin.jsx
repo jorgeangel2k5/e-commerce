@@ -1,35 +1,9 @@
 import React, {useState} from "react";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import ProductContext from "../context/ProductContext";
 
-const initialProducts = [
-  {
-    id: 1,
-    title: "Bicicleta Mountain Bike R29 TopMega",
-    description: "Cuadro de aluminio, 21 velocidades Shimano, frenos a disco mecánico y suspensión delantera.",
-    price: 320000,
-    category: "Mountain Bike",
-    stock: 8,
-    image: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    id: 2,
-    title: "Bicicleta de Ruta Venzo Phoenix R28",
-    description: "Diseño aerodinámico ultra liviano, transmisión Shimano Claris 16v, ideal para entrenamiento y carrera.",
-    price: 680000,
-    category: "Ruta",
-    stock: 3,
-    image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    id: 3,
-    title: "Bicicleta Urbana Paseo Lady R26",
-    description: "Cuadro bajo para mayor comodidad, canasto frontal incluido, guardabarros y portapaquetes trasero.",
-    price: 210000,
-    category: "Urbana",
-    stock: 5,
-    image: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=600&q=80"
-  }
-];
+
 const emptyForm = {
     id: null,
     title: '',
@@ -40,9 +14,8 @@ const emptyForm = {
     image: ''
 };
 
-
 const Admin = () =>{
-    const [products, setProducts] = useState(initialProducts);
+    const { productos, setProductos } = useContext(ProductContext);
     const [editingId, setEditingId] = useState(null);
 
     const {register,handleSubmit,reset,setValue,formState: { errors },} = useForm(emptyForm);
@@ -56,7 +29,7 @@ const Admin = () =>{
         };
 
         if (editingId) {
-            setProducts(products.map(item => item.id === editingId ? { ...formattedData, id: editingId } : item));
+            setProductos(productos.map(item => item.id === editingId ? { ...formattedData, id: editingId } : item));
             setEditingId(null);
         } 
         else {
@@ -64,7 +37,7 @@ const Admin = () =>{
             ...formattedData,
             id: Date.now()
             };
-            setProducts([...products, newProduct]);
+            setProductos([...productos, newProduct]);
         }
 
         reset();
@@ -88,7 +61,7 @@ const Admin = () =>{
 
     const handleDelete = (id) => {
         if (window.confirm("¿Estás seguro de que querés eliminar este producto?")) {
-            setProducts(products.filter(item => item.id !== id));
+            setProductos(productos.filter(item => item.id !== id));
             if (editingId === id) handleCancelEdit();
         }
     };
@@ -219,7 +192,7 @@ const Admin = () =>{
                     </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 bg-white">
-                    {products.map((item) => (
+                    {productos.map((item) => (
                         <tr key={item.id} className="hover:bg-gray-50 transition-colors">
                         <td className="p-4 text-center">
                             <img
