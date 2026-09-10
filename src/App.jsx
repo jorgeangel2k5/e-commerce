@@ -8,7 +8,7 @@ import { ProtectedRoute } from './routes/ProtectedRoute';
 function App() {
   return (
     <UserProvider>
-      
+      <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
@@ -18,7 +18,7 @@ function App() {
             <Route path="/admin" element={<h1>Panel de Administración (Vista previa)</h1>} />
           </Route>
         </Routes>
-   
+      </BrowserRouter>
     </UserProvider>
   );
 }
