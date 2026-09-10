@@ -6,7 +6,7 @@ import Login  from './pages/Login';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Admin from './pages/Admin';
-
+import AboutUs from './pages/AboutUs';
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           <Route element={<ProtectedRoute adminOnly={true} />}>
             <Route path="/admin" element={<Admin />} />
           </Route>
-
+          <Route path="/about" element={<AboutUs />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </UserProvider>
