@@ -4,31 +4,31 @@ const AboutUs = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Integrante 1",
+      name: "Jorge Angel",
       role: "Desarrollador Frontend",
       description: "Hola, soy parte del equipo. Me enfoqué en la estructura de componentes, maquetación e integración de interfaces con React y Tailwind.",
-      image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80"
+      image: "IMG-20260910-WA0004.jpg"
     },
     {
       id: 2,
-      name: "Integrante 2",
+      name: "Alexis fernandez",
       role: "Desarrollador Frontend",
       description: "Participé en el diseño visual, manejo de estilos con Tailwind CSS y control de versiones del proyecto.",
-      image: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=300&q=80"
+      image: "IMG-20260910-WA0005.jpg"
     },
     {
       id: 3,
-      name: "Integrante 3",
+      name: "Alvaro Medina",
       role: "Desarrollador Frontend",
       description: "Colaboré en la lógica de estados y la navegación general de las vistas de la aplicación.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80"
+      image: "IMG-20260910-WA0007.jpg"
     },
     {
       id: 4,
-      name: "Integrante 4",
+      name: "Lautaro de la Jara",
       role: "Desarrollador Frontend",
       description: "Trabajé en el diseño responsivo asegurando que la tienda se visualice correctamente en dispositivos móviles y de escritorio.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
+      image: " "
     },
     {
       id: 5,
@@ -65,15 +65,17 @@ const AboutUs = () => {
             {teamMembers.map((member) => (
               <article
                 key={member.id}
-                className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col items-center text-center transition duration-300 hover:shadow-md"
+                className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 flex flex-col items-center text-center transition-all duration-300 hover:border-yellow-500 hover:shadow-xl group"
+
               >
+
                 <img
                   src={member.image}
                   alt={`Foto de perfil de ${member.name}`}
                   className="w-28 h-28 rounded-full object-cover border-4 border-yellow-500 shadow-inner mb-4"
                 />
-                <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
-                <span className="text-sm font-semibold text-[#FF6A00] mt-1">{member.role}</span>
+                <h3 className="text-xl font-bold text-gray-900">{member.name} </h3>
+                <span className="text-sm font-semibold text-[#FF6A00] mt-1 transition-colors duration-300 group-hover:text-yellow-500">{member.role}</span>
                 <p className="text-gray-600 text-sm mt-3 leading-relaxed">
                   {member.description}
                 </p>
