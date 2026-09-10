@@ -1,25 +1,31 @@
 import './App.css';
-import { UserProvider } from './context/UserContext';
-import { Login } from './pages/Login';
-import Home from './pages/Home';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import { ProtectedRoute } from './routes/ProtectedRoute';
+import { UserProvider } from './context/UserContext';
+import Login  from './pages/Login';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Admin from './pages/Admin';
+import AboutUs from './pages/AboutUs';
+
 
 function App() {
   return (
-    <UserProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <UserProvider>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
 
           {/* Ruta protegida */}
           <Route element={<ProtectedRoute adminOnly={true} />}>
-            <Route path="/admin" element={<h1>Panel de Administración (Vista previa)</h1>} />
+            <Route path="/admin" element={<Admin />} />
           </Route>
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
-    </UserProvider>
+      </UserProvider>
+    </BrowserRouter>
   );
 }
 
