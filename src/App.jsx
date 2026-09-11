@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Admin from './pages/Admin';
 import AboutUs from './pages/AboutUs';
+import ProductDetail from './pages/ProductDetail';
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
+
+          <Route path="/producto/:id" element={<ProductDetail />} />
 
           {/* Ruta protegida */}
           <Route element={<ProtectedRoute adminOnly={true} />}>
