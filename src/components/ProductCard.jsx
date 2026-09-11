@@ -1,6 +1,9 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const ProductCard = ({ producto }) => {
+
+  const navigate = useNavigate()
 
   return (
     <div className="border rounded-lg shadow-md p-4 m-4 hover:shadow-2xl transition-all duration-300">
@@ -25,6 +28,7 @@ const ProductCard = ({ producto }) => {
 
       <button
         className="w-full mt-4 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+        // onClick={() => navigate(`/product/${producto.id}`)}
       >
         Ver detalle
       </button>
