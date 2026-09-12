@@ -1,19 +1,31 @@
-import initialProducts from "../data/productos";
+import React, { useContext } from "react";
+import { ProductContext } from "../context/ProductContext";
 import ProductCard from "../components/ProductCard";
+import SearchBar from "../components/SearchBar";
 
 const Home = () => {
-  return (
-    <main className="container py-4">
-      <h1 className="text-center mb-4">Nuestros productos</h1>
+  const { productos, busqueda, setBusqueda } = useContext(ProductContext);
 
-      <div className="row g-4">
-        {initialProducts.map((product) => (
-          <div className="col-12 col-md-6 col-lg-4" key={product.id}>
-            <ProductCard product={product} />
-          </div>
+  const productosFiltrados = productos ? productos.filter((producto) =>
+    producto.category?.toLowerCase().includes(busqueda.toLowerCase())
+  ) : [];
+
+  return (
+    <div className="p-4">
+      <SearchBar
+        busqueda={busqueda}
+        setBusqueda={setBusqueda}
+      />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {productosFiltrados.map((producto) => (
+          <ProductCard
+            key={producto.id}
+            producto={producto}
+          />
         ))}
       </div>
-    </main>
+    </div>
   );
 };
 

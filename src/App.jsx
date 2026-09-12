@@ -1,23 +1,18 @@
-import "./App.css";
-import { BrowserRouter } from "react-router-dom";
-
+import { BrowserRouter } from "react-router";
 import { UserProvider } from "./context/UserContext";
-import NavbarApp from "./components/NavbarApp";
-import FooterApp from "./components/FooterApp";
+import { ProductProvider } from "./context/ProductContext";
 import AppRouter from "./routes/AppRouter";
 
 function App() {
-    return (
-        <BrowserRouter>
-            <UserProvider>
-                <NavbarApp />
-
-                <AppRouter />
-
-                <FooterApp />
-            </UserProvider>
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      <UserProvider>
+        <ProductProvider>
+          <AppRouter />
+        </ProductProvider>
+      </UserProvider>
+    </BrowserRouter>
+  );
 }
 
 export default App;

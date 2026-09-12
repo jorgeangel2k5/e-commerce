@@ -1,26 +1,40 @@
-const ProductCard = ({ product }) => {
+import React from 'react'
+import { useNavigate } from 'react-router'
+
+const ProductCard = ({ producto }) => {
+
+  const navigate = useNavigate()
+
   return (
-    <div className="card h-100">
+    <div className="border rounded-lg shadow-md p-4 m-4 flex flex-col h-full hover:shadow-2xl transition-all duration-300">
+
       <img
-        src={product.image}
-        className="card-img-top"
-        alt={product.title}
-        style={{ height: "220px", objectFit: "cover" }}
+        src={producto.image}
+        alt={producto.title}
+        className="w-full h-48 object-cover rounded-md"
       />
 
-      <div className="card-body">
-        <h5 className="card-title">{product.title}</h5>
+      <h3 className="text-lg text-center font-bold mt-3 mb-4">
+        {producto.title}
+      </h3>
 
-        <p className="card-text">
-          {product.description}
-        </p>
+      <p className="text-gray-500 mb-4">
+        {producto.category}
+      </p>
 
-        <h5>${product.price}</h5>
+      <p className="text-green-800 text-2xl font-bold">
+        ${producto.price}
+      </p>
 
-        <p>Stock: {product.stock}</p>
-      </div>
+      <button
+        className="w-full mt-auto bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+        onClick={() => navigate(`/producto/${producto.id}`)}
+      >
+        Ver detalle
+      </button>
+
     </div>
-  );
-};
+  )
+}
 
-export default ProductCard;
+export default ProductCard
