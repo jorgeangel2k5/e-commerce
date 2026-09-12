@@ -6,7 +6,7 @@ const ProductCard = ({ producto }) => {
   const navigate = useNavigate()
 
   return (
-    <div className="border rounded-lg shadow-md p-4 m-4 hover:shadow-2xl transition-all duration-300">
+    <div className="border rounded-lg shadow-md p-4 m-4 flex flex-col h-full hover:shadow-2xl transition-all duration-300">
 
       <img
         src={producto.image}
@@ -22,12 +22,12 @@ const ProductCard = ({ producto }) => {
         {producto.category}
       </p>
 
-      <p className="text-green-800 text-2xl font-bold mb-4">
+      <p className="text-green-800 text-2xl font-bold">
         ${producto.price}
       </p>
 
       <button
-        className="w-full mt-4 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+        className="w-full mt-auto bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
         onClick={() => navigate(`/producto/${producto.id}`)}
       >
         Ver detalle
