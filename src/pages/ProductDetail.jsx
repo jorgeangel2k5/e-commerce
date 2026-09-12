@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import initialProducts from '../data/productos'
+import NotFound from './NotFound'
 
 const ProductDetail = () => {
 
@@ -7,17 +9,25 @@ const ProductDetail = () => {
 
     const {id} = useParams()
 
-    const producto = {
-        title: "Bicicleta Mountain Bike R29 TopMega",
-        category: "Mountain",
-        price: 250000,
-        stock: 8,
-        description: "Bicicleta ideal para terrenos irregulares.",
-        image: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=600&q=80"
+    const producto = initialProducts.find(
+        (item) => item.id === Number(id)
+    )
+
+    if (!producto) {
+        return <NotFound />
     }
     
   return (
-    <div>
+    <div className="min-h-screen">
+        <button 
+            className='mt-6 mx-5 px-5 py-2 rounded-lg bg-gray-800 text-white hover:bg-gray-700'
+            onClick={() => navigate(-1)}
+        >
+            Volver
+        </button>
+        <h1 className="text-4xl font-bold mx-10 mt-10">
+            Detalle del producto
+        </h1>
          <div className='m-10 p-6 rounded-lg shadow-lg border'>
             <div className='flex flex-col md:flex-row gap-6'>
                 <div className='md:w-1/2'>
@@ -41,13 +51,6 @@ const ProductDetail = () => {
                 </div>
             </div>
         </div>
-        <button 
-            className='mt-6 mx-5 px-5 py-2 rounded-lg bg-gray-800 text-white hover:bg-gray-700'
-            onClick={() => navigate(-1)}
-        >
-            Volver
-        </button>
-
     </div>
    
   )

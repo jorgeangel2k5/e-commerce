@@ -14,15 +14,15 @@ const ProductCard = ({ producto }) => {
         className="w-full h-48 object-cover rounded-md"
       />
 
-      <h3 className="text-lg font-bold mt-3 min-h-14">
+      <h3 className="text-lg text-center font-bold mt-3 mb-4">
         {producto.title}
       </h3>
 
-      <p className="text-gray-600">
+      <p className="text-gray-500 mb-4">
         {producto.category}
       </p>
 
-      <p className="text-xl font-semibold mt-2">
+      <p className="text-green-800 text-2xl font-bold mb-4">
         ${producto.price}
       </p>
 
