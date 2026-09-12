@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ProtectedRoute } from './routes/ProtectedRoute';
 import { UserProvider } from './context/UserContext';
 import Login  from './pages/Login';

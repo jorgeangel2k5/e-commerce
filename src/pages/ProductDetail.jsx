@@ -1,11 +1,11 @@
 import React from 'react'
-// import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const ProductDetail = () => {
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
-    // const {id} = useParams()
+    const {id} = useParams()
 
     const producto = {
         title: "Bicicleta Mountain Bike R29 TopMega",

@@ -28,7 +28,7 @@ const ProductCard = ({ producto }) => {
 
       <button
         className="w-full mt-4 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
-        // onClick={() => navigate(`/product/${producto.id}`)}
+        onClick={() => navigate(`/producto/${producto.id}`)}
       >
         Ver detalle
       </button>
