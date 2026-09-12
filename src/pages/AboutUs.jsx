@@ -28,7 +28,7 @@ const AboutUs = () => {
       name: "Lautaro de la Jara",
       role: "Desarrollador Frontend",
       description: "Trabajé en el diseño responsivo asegurando que la tienda se visualice correctamente en dispositivos móviles y de escritorio.",
-      image: " "
+      image: "IMG-20260911-WA0005.jpg"
     },
     {
       id: 5,
