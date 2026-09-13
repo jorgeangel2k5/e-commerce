@@ -1,40 +1,51 @@
-import React from 'react'
-import { useNavigate } from 'react-router'
+import React from "react";
+import { Link } from "react-router";
 
-const ProductCard = ({ producto }) => {
+const ProductCard = ({ product, producto }) => {
+  // Acepta tanto la prop 'product' como 'producto'
+  const item = product || producto;
 
-  const navigate = useNavigate()
+  // Si por alguna razón el ítem viene undefined o nulo, no rompe la app
+  if (!item) {
+    return null;
+  }
 
   return (
-    <div className="border rounded-lg shadow-md p-4 m-4 flex flex-col h-full hover:shadow-2xl transition-all duration-300">
+    <div className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden shadow-lg flex flex-col justify-between p-4 transition-all hover:border-zinc-700">
+      <div>
+        {/* Renderizado seguro de imagen */}
+        <img
+          src={item.image || item.imagen || "https://via.placeholder.com/300"}
+          alt={item.title || item.nombre || "Producto"}
+          className="w-full h-52 object-cover rounded-lg mb-4"
+        />
 
-      <img
-        src={producto.image}
-        alt={producto.title}
-        className="w-full h-48 object-cover rounded-md"
-      />
+        <h5 className="text-lg font-bold text-white mb-2 line-clamp-1">
+          {item.title || item.nombre || "Sin título"}
+        </h5>
 
-      <h3 className="text-lg text-center font-bold mt-3 mb-4">
-        {producto.title}
-      </h3>
+        <p className="text-sm text-gray-400 line-clamp-2 mb-3">
+          {item.description || item.descripcion || "Sin descripción disponible"}
+        </p>
 
-      <p className="text-gray-500 mb-4">
-        {producto.category}
-      </p>
+        <div className="flex items-center justify-between mb-4">
+          <span className="text-2xl font-extrabold text-amber-500">
+            ${item.price ?? item.precio ?? 0}
+          </span>
+          <span className="text-xs text-gray-400 bg-zinc-800 px-2 py-1 rounded-md">
+            Stock: {item.stock ?? 0}
+          </span>
+        </div>
+      </div>
 
-      <p className="text-green-800 text-2xl font-bold">
-        ${producto.price}
-      </p>
-
-      <button
-        className="w-full mt-auto bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
-        onClick={() => navigate(`/producto/${producto.id}`)}
+      <Link
+        to={`/product/${item.id}`}
+        className="w-full text-center py-2.5 bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold rounded-lg transition-colors text-sm inline-block"
       >
         Ver detalle
-      </button>
-
+      </Link>
     </div>
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;

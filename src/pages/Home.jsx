@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-import { ProductContext } from "../context/ProductContext";
 import ProductCard from "../components/ProductCard";
 import SearchBar from "../components/SearchBar";
-
+import { ProductContext } from "../context/ProductContext";
 const Home = () => {
   const { productos, busqueda, setBusqueda } = useContext(ProductContext);
 

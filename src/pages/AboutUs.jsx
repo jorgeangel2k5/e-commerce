@@ -40,11 +40,11 @@ const AboutUs = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-gray-100 text-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen  text-gray-800 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto space-y-10">
        
         {/* Encabezado principal */}
-        <header className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-center sm:text-left">
+        <header className="bg-black rounded-2xl shadow-sm border border-gray-200 p-8 text-center sm:text-left">
           <div className="inline-block bg-[#FF6A00] text-white text-xs font-semibold px-3 py-1 rounded mb-3">
             Equipo de Desarrollo
           </div>
@@ -57,8 +57,8 @@ const AboutUs = () => {
         </header>
 
         {/* Sección de 5 tarjetas */}
-        <section>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center sm:text-left">
+        <section className="bg-black rounded-2xl shadow-sm border border-gray-200 p-8 text-center sm:text-left">
+          <h2 className="inline-block bg-[#FF6A00] text-white text-xs font-semibold px-3 py-1 rounded mb-3">
             Conoce al Equipo
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -85,7 +85,7 @@ const AboutUs = () => {
         </section>
 
         {/* Tecnologías usadas */}
-        <section className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+        <section className="bg-black rounded-2xl shadow-sm border border-gray-200 p-8 text-center sm:text-left">
           <h3 className="text-xl font-bold text-yellow-500 mb-4">
             Tecnologías usadas:
           </h3>
@@ -101,7 +101,7 @@ const AboutUs = () => {
         <div className="text-center pt-2">
           <a
             href="/"
-            className="inline-block px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded shadow-md transition duration-300"
+            className="inline-block px-6 py-3 bg-amber-500 hover:bg-red-700 text-black font-semibold rounded shadow-md transition duration-300"
           >
             Volver al Inicio
           </a>

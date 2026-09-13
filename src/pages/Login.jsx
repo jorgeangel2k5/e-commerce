@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { useContext, useState } from 'react';
 import { UserContext } from "../context/UserContext";
 
@@ -26,7 +26,7 @@ export const Login = () => {
   };
 
   return (
-    <div className='flex justify-center items-center min-h-screen bg-black p-4'>
+    <div className='flex justify-center items-center min-h-screen  p-4'>
       <article className="bg-zinc-800 w-full max-w-md rounded-2xl p-8 shadow-xl">
         <header className="text-center mb-6">
           <h1 className="text-amber-600 text-4xl font-bold">Iniciar Sesión</h1>

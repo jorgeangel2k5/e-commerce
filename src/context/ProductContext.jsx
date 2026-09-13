@@ -1,30 +1,17 @@
-import React, { createContext } from 'react'
-import { useState, useEffect } from 'react'
-import initialProducts from '../data/productos'
+import React, { createContext, useState } from "react";
+import initialProducts from "../data/productos";
 
-const ProductContext = createContext()
+// 1. Exportación nombrada del Contexto (necesaria para el useContext en Home.jsx)
+export const ProductContext = createContext();
 
+// 2. Componente Proveedor
 export const ProductProvider = ({ children }) => {
+  const [productos, setProductos] = useState(initialProducts);
+  const [busqueda, setBusqueda] = useState("");
 
-    const [productos, setProductos] = useState(() => {
-        const datosGuardados = localStorage.getItem("catalogo");
-        if (datosGuardados != null) {
-            return JSON.parse(datosGuardados);
-        }
-        return initialProducts;
-    });
-
-    useEffect(() => {
-        localStorage.setItem(
-            "catalogo",
-            JSON.stringify(productos)
-        )
-    }, [productos])
-
-    return (
-        <ProductContext.Provider value={{productos, setProductos}}>
-            {children}
-        </ProductContext.Provider>
-    )
-}
-export default ProductContext
+  return (
+    <ProductContext.Provider value={{ productos, setProductos, busqueda, setBusqueda }}>
+      {children}
+    </ProductContext.Provider>
+  );
+};
