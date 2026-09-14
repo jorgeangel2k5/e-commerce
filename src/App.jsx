@@ -1,11 +1,15 @@
-import './App.css'
+import AppRouter from "./routes/AppRouter";
+import { UserProvider } from "./context/UserContext";
+import { ProductProvider } from "./context/ProductContext";
 
 function App() {
-
   return (
-    <h1 className="text-6xl">Que comience el Juego</h1>
-
-  )
+    <UserProvider>
+      <ProductProvider>
+        <AppRouter />
+      </ProductProvider>
+    </UserProvider>
+  );
 }
 
-export default App
+export default App;
